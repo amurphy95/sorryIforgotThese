@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>This is where you can create your own percolation images.</h1>
+<br>
+
+<form action="http://localhost:5000/results" method="POST">
+	<p>P= <input type = "text" name = "P" /></p>
+  	<p>R= <input type = "text" name = "R" /></p>
+    <p>T= <input type = "text" name = "T" /></p>
+    <p><input type = "submit" value = "submit" /></p>
+</form>
+<p>You can read more about these input parameters on the <a href="/about">About</a> page.<br>
+(Example critical values are P=0.48, R=3 and T=5)</p>
+
+<!-- <br>
+<p style="text-align:center;"><img src="static/percolationImage30.png" alt="percolation" width="500" height="500"></p>
+<br>
+<button id="btnSignUp" class="btn btn-default" type="button">Save this image to your percolation images</button>
+<br>
+<br>
+<button id="btnSignUp" class="btn btn-default" type="button">Save this image to your documents</button> -->
+
+{% endblock %}

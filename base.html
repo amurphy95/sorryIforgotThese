@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Flask Intro</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="static/bootstrap.min.css" rel="stylesheet" media="screen">
+  </head>
+  <body>
+
+    <div class="topnav" id="myTopnav">
+      <ul class="title-area"><!-- float this left -->
+    <p><font size="8" color="green">Welcome to the Percolation Application!</font><br>
+      <li style="float:right">{% for message in get_flashed_messages() %}
+      <font color="green">  {{ message }}</font>
+      {% endfor %}</p></li>
+      </ul>
+      <a href="/welcome">Welcome</a>
+      <a href="/about">About</a>
+      <a href="/">Create Images</a>
+      <a href="/viewImages">View Images</a>
+      <a href="/login">Login</a>
+      <a href="/logout">Logout</a>
+      <a href="/signup">Sign Up</a>
+      <link type="text/css" rel="stylesheet" href="static/navCSS.css"/>
+    </div>
+
+    <div class="container">
+
+      <!-- child template -->
+      {% block content %}{% endblock %}
+
+      <!-- errors -->
+      {% if error %}
+        <p class="error"><strong>Error:</strong> {{ error }}</p>
+      {% endif %}
+
+      <!-- messages -->
+
+      <footer><p>Click <a href="/">here</a> to go create your percolation image.</p>
+      <p>Click <a href="/viewImages">here</a> to go see your percolation images.</p></footer>
+      
+
+    </div>
+
+  </body>
+</html>

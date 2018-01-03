@@ -1,0 +1,31 @@
+
+{% extends "base.html" %}
+{% block content %}
+
+<h1>This is you percolation image</h1>
+  <table border = 1>
+     {% for key, value in result.iteritems() %}       
+        <tr>
+           <th> {{ key }} </th>
+           <td> {{ value }} </td>
+        </tr>     
+     {% endfor %}
+  </table>
+
+<img src="data:image/jpeg;base64,{{resultsBase}}">
+
+
+<a href="/" class="btn btn-success">Create another image</a><br>
+<a href="/" class="btn btn-success">Save to 'My Images'</a>
+
+
+<!-- <br>
+<button id="btnSignUp" class="btn btn-default" type="button">Save this image to your percolation images</button>
+<br>
+<br>
+<button id="btnSignUp" class="btn btn-default" type="button">Create another image</button>
+<br>
+<br> -->
+<p>To save the image to your own documents just right click and select: "Save Image As..."</p>
+
+{% endblock %}
